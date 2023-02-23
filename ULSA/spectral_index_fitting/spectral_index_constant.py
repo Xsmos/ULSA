@@ -88,9 +88,10 @@ class constant_index(object):
     def read_file(self,downgrade_to= 256, resolution = 5):
 
         # with h5py.File(self.file_dir + '/Guzman/wlb_45MHz.hdf5','r') as h:
-        with h5py.File(self.file_dir + '/Guzman/wlb45.h5','r') as h:
-            # hpmap_45_old = h['hpmap'][:]
-            hpmap_45_old = h['PRIMARY/DATA'][:]
+        # with h5py.File(self.file_dir + '/Guzman/wlb45.h5','r') as h:
+        with h5py.File(self.file_dir + '/Guzman/MAIPU_MU_1_64.h5','r') as h:
+            hpmap_45_old = h['hpmap'][:]
+            # hpmap_45_old = h['PRIMARY/DATA'][:]
         hpmap_45_old = self.minus_free_free(hpmap_45_old,45,downgrade_to)
         hpmap_408 = hp.read_map(self.file_dir + '/Haslam/haslam408_dsds_Remazeilles2014.fits')
         #downgrade to 256 may be, and change the coordinate from galaxy to equatorial
