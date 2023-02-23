@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: ULSA
+Version: 0.1
+Summary: The Ultral-Long wavelength Sky model with Absorption
+Home-page: https://github.com/Yanping-Cong/ULSA
+Author: Yanping Cong
+Author-email: ypcong@bao.ac.cn
+License: MIT
+Description: UNKNOWN
+Keywords: The ULSA
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Text Processing :: Linguistic
