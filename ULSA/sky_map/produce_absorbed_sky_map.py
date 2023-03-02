@@ -530,7 +530,8 @@ class absorption_JRZ(object):
             diffuse_raw_ = None
             unabsorb = None
         #local_delt_m = mpiutil.mpilist(delt_m, method = 'con',comm = MPI.COMM_WORLD)
-        local_range = mpiutil.mpirange(0,hp.nside2npix(self.nside))
+        #local_range = mpiutil.mpirange(0,hp.nside2npix(self.nside))
+        local_range = np.arange(0, hp.nside2npix(self.nside))
 
         delt_m = mpiutil.bcast(delt_m, root = 0)
         params = mpiutil.bcast(params, root = 0)
@@ -562,11 +563,10 @@ class absorption_JRZ(object):
                 result_absorb.append([pix_number, pix_value, distance])
             print ('rest_number',12*self.nside**2 - pix_number)
         #if self.test == True:
-        if False:
-
-            result_absorb = mpiutil.gather_list(result_absorb, root = None)
-        else:
-            result_absorb = mpiutil.gather_list(result_absorb, root = None)
+        # if False:
+        #     result_absorb = mpiutil.gather_list(result_absorb, root = None)
+        # else:
+        #     result_absorb = mpiutil.gather_list(result_absorb, root = None)
         if rank == 0:
             if self.critical_dis == True:
                 with h5py.File(str(self.v)+'MHz_critical_dist.hdf5','w') as f:
