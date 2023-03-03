@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 from ULSA.sky_map.produce_absorbed_sky_map import absorption_JRZ
 import healpy as hp
 import numpy as np
@@ -16,8 +22,24 @@ def produce_sky_map():
 
     return sky_map_list
 
-def plot():
-    sky_map_list = produce_sky_map()
-    x
 
-plot()
+# In[3]:
+
+
+sky_map_list = produce_sky_map()
+
+
+# In[18]:
+
+
+# np.transpose(sky_map)[1]
+
+
+# In[29]:
+
+
+plt.figure()
+for sky_map in sky_map_list:
+    hp.mollview(np.log10(np.transpose(sky_map)[1]), cmap = plt.cm.jet) # log10
+    plt.savefig("mollview.png")
+
